@@ -7,9 +7,21 @@ public class Cell
     private int _width;
     private int _height;
     private int _x, _y;
+    private int _debugVal;
 
     public int GetX => _x;
     public int GetY => _y;
+    public int GetWidth => _width;
+    public int GetHeight => _height;
+
+    public int DebugVal
+    {
+        get => _debugVal;
+        set
+        {
+            _debugVal = value;
+        }
+    }
 
     public Cell (int width, int height, int x, int y)
     {
@@ -17,11 +29,12 @@ public class Cell
         _height = height;
         _x = x;
         _y = y;
+        _debugVal = 0;
     }
 
     public override string ToString()
     {
-        return "X: " + _x + " Y: " + _y;
+        return "X: " + _x + " Y: " + _y + " DebugVal: " + _debugVal;
     }
 
     public Vector3 GetWorldPosition(int x, int y)
